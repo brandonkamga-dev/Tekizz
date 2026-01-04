@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ThemeLangBox from "../ThemeLangBox";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const { t } = useTranslation('common');
@@ -11,7 +12,7 @@ const Header = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl font-black text-gray-900 border-b-2"
+          className="text-xl font-black text-foreground border-b-2 border-foreground"
         >
           Tekizz
         </Link>
@@ -28,13 +29,13 @@ const Header = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-8">
-          <Link
+          <Button variant="default" className="px-6">
+              <Link
             to="/login"
-            className="px-4 py-2 border border-gray-800 text-sm hover:bg-black hover:text-white transition"
           >
             {t('header.login')}
           </Link>
-
+          </Button>
           <ThemeLangBox />
         </div>
 

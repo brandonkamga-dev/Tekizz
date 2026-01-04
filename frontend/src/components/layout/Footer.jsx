@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 const Footer = () => {
   const { t } = useTranslation('common')
   return (
-    <footer className="w-full py-2 text-sm text-gray-500">
+    <footer className="w-full py-2 text-sm text-muted-foreground">
       <div className="flex items-center justify-center gap-2">
         <span>{t('footer.developedBy')}</span>
 
@@ -12,7 +12,7 @@ const Footer = () => {
           href="https://github.com/brandonkamga"
           target="_blank"
           rel="noreferrer"
-          className="font-medium text-gray-800 hover:underline"
+          className="font-medium text-foreground hover:underline"
         >
           Brandon Kamga
         </a>
