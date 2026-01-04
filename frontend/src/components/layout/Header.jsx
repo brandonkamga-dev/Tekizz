@@ -4,39 +4,44 @@ import ThemeLangBox from "../ThemeLangBox";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
+
   return (
     <header className="w-full">
-      <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center">
 
-        {/* Logo */}
-        <Link
-          to="/"
-          className="text-xl font-black text-foreground border-b-2 border-foreground"
-        >
-          Tekizz
-        </Link>
-
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          <Link to="/" className="hover:underline">
-            {t('header.home')}
-          </Link>
-          <Link to="/about" className="hover:underline">
-            {t('header.about')}
-          </Link>
-        </nav>
-
-        {/* Actions */}
-        <div className="flex items-center gap-8">
-          <Button variant="default" className="px-6">
-              <Link
-            to="/login"
+        {/* LEFT ZONE : Logo + Nav */}
+        <div className="flex items-center gap-56">
+          {/* Logo */}
+          <Link
+            to="/"
+            className="text-xl font-black tracking-tight text-foreground"
           >
-            {t('header.login')}
+            Tekizz
           </Link>
-          </Button>
+
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+            <Link to="/" className="hover:text-foreground transition">
+              {t("header.home")}
+            </Link>
+            <Link to="/about" className="hover:text-foreground transition">
+              {t("header.about")}
+            </Link>
+          </nav>
+        </div>
+
+        {/* RIGHT ZONE */}
+        <div className="ml-auto flex items-center gap-20">
+          {/* Theme + Lang */}
           <ThemeLangBox />
+
+          {/* Login */}
+          <Button className="w-fit px-10 py-4"  size="sm">
+            <Link to="/login">
+              {t("header.login")}
+            </Link>
+          </Button>
         </div>
 
       </div>

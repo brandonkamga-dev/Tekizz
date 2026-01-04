@@ -17,7 +17,7 @@ const Home = () => {
           {t("home.description")}
         </p>
 
-        <Button variant="default" className="w-fit px-10 py-4font-bold hover:bg-foreground hover:text-background transition">
+        <Button variant="default" className="w-fit px-10 py-4 font-bold hover:bg-foreground hover:text-background transition">
           {t("home.startQuiz")}
         </Button>
       </div>
