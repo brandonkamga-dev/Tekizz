@@ -25,7 +25,7 @@ export default function QuizScreen({ question, timeLeft, lives, onAnswer }) {
 
         {/* Header */}
         <div className="flex justify-between items-center">
-          {/* ❤️ Vies */}
+          {/* Lives */}
           <div className="flex gap-1 text-lg">
             {[1, 2, 3].map((i) => (
               <span key={i} className={i <= lives ? "text-red-500" : "text-gray-300"}>
@@ -34,7 +34,7 @@ export default function QuizScreen({ question, timeLeft, lives, onAnswer }) {
             ))}
           </div>
 
-          {/* ⏱️ Temps */}
+          {/* Time */}
           <span
             className={`text-xl font-bold tabular-nums ${
               timeLeft <= 3 ? "text-red-500 animate-pulse" : ""
@@ -49,7 +49,7 @@ export default function QuizScreen({ question, timeLeft, lives, onAnswer }) {
           {question.q}
         </h2>
 
-        {/* Réponses */}
+        {/* Answers */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {question.options.map((opt, i) => {
             let style =

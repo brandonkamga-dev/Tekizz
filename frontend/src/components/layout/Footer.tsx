@@ -1,11 +1,13 @@
-import React from "react";
-import { LinkedinLogoIcon, GlobeIcon } from "@phosphor-icons/react";
+import { LinkedinLogoIcon, GlobeIcon, WhatsappLogoIcon } from "@phosphor-icons/react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation('common')
   return (
-    <footer className="w-full border-t border-gray-200 py-4 text-center text-sm text-gray-500">
-      <p className="flex items-center justify-center gap-2 flex-wrap">
-        Developed by{" "}
+    <footer className="w-full py-2 text-sm text-gray-500">
+      <div className="flex items-center justify-center gap-2">
+        <span>{t('footer.developedBy')}</span>
+
         <a
           href="https://github.com/brandonkamga"
           target="_blank"
@@ -14,24 +16,31 @@ const Footer = () => {
         >
           Brandon Kamga
         </a>
+
         <a
           href="https://linkedin.com/in/tonprofil"
           target="_blank"
           rel="noreferrer"
-          className="text-gray-700"
         >
-          <LinkedinLogoIcon size={20} weight="bold" />
+          <LinkedinLogoIcon size={18} />
         </a>
         |
         <a
           href="https://tonsite.com"
           target="_blank"
           rel="noreferrer"
-          className="text-gray-700"
         >
-          <GlobeIcon size={20} weight="bold" />
+          <GlobeIcon size={18} />
         </a>
-      </p>
+        |
+        <a
+          href="https://tonsite.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <WhatsappLogoIcon size={18} />
+        </a>
+      </div>
     </footer>
   );
 };

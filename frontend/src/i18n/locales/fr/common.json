@@ -1,0 +1,10 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "login": "Connexion"
+  },
+  "footer": {
+    "developedBy": "Développé par"
+  }
+}

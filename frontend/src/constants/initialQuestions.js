@@ -1,4 +1,3 @@
-// src/constants/initialQuestions.js
 export const initialQuestions = [
   {
     q: "Quel hook remplace componentDidMount ?",
