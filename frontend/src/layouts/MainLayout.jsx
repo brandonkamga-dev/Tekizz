@@ -4,16 +4,16 @@ import Footer from "../components/layout/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="flex flex-col h-screen">
-      {/* Header */}
+    <div className="relative min-h-screen bg-background">
+      {/* Le Header gère son propre placement fixe et ses marges */}
       <Header />
 
-      {/* Main content */}
-      <main className="flex-grow flex">
+      {/* On ajoute un padding top ici pour que le contenu ne soit jamais caché sous le header */}
+      <main>
         <Outlet />
       </main>
 
-      {/* Footer */}
+      {/* Le Footer gère son propre espacement */}
       <Footer />
     </div>
   );

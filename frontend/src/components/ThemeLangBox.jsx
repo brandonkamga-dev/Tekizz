@@ -1,4 +1,4 @@
-import { SunIcon, MoonIcon, GithubLogoIcon } from "@phosphor-icons/react";
+import { Sun, Moon } from "lucide-react"; // Standard 2026
 import { useTranslation } from "react-i18next";
 import { useTheme } from "./theme-provider";
 
@@ -6,48 +6,23 @@ const ThemeLangBox = () => {
   const { i18n } = useTranslation();
   const { theme, setTheme } = useTheme();
 
-  const toggleTheme = () =>
-    setTheme(theme === "light" ? "dark" : "light");
-
-  const toggleLang = () =>
-    i18n.changeLanguage(i18n.language === "fr" ? "en" : "fr");
-
   return (
-    <div className="flex items-center gap-4 text-muted-foreground">
-      
-      {/* Theme */}
+    <div className="flex items-center p-1 bg-muted/30 backdrop-blur-md border border-border/50 rounded-full">
       <button
-        onClick={toggleTheme}
-        className="w-7 h-7 flex items-center justify-center hover:text-foreground transition"
-        aria-label="Toggle theme"
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        className="w-8 h-8 flex items-center justify-center rounded-full bg-background shadow-sm text-foreground transition-all hover:scale-110 active:scale-95"
       >
-        {theme === "light" ? (
-          <SunIcon size={18} weight="bold" />
-        ) : (
-          <MoonIcon size={18} weight="bold" />
-        )}
+        {theme === "light" ? <Sun size={14} /> : <Moon size={14} />}
       </button>
 
-      {/* Language */}
+      <div className="w-[1px] h-4 bg-border mx-1" />
+
       <button
-        onClick={toggleLang}
-        className="text-xs font-medium tracking-widest hover:text-foreground transition"
-        aria-label="Toggle language"
+        onClick={() => i18n.changeLanguage(i18n.language === "fr" ? "en" : "fr")}
+        className="px-3 py-1 text-[10px] font-bold tracking-tighter uppercase hover:text-primary transition-colors italic"
       >
-        {i18n.language.toUpperCase()}
+        {i18n.language}
       </button>
-
-      {/* GitHub */}
-      <a
-        href="https://github.com/brandonkamga"
-        target="_blank"
-        rel="noreferrer"
-        className="w-7 h-7 flex items-center justify-center hover:text-foreground transition"
-        aria-label="GitHub"
-      >
-        <GithubLogoIcon size={18} weight="bold" />
-      </a>
-
     </div>
   );
 };

@@ -2,9 +2,12 @@
   "header": {
     "home": "Accueil",
     "about": "À propos",
-    "login": "Connexion"
+    "login": "Connexion",
+    "getStarted": "Commencer"
   },
   "footer": {
-    "developedBy": "Développé par"
+    "developedBy": "Développé par",
+    "tagline": "Transformez votre apprentissage tech en expérience interactive et fun. Rejoignez notre communauté de passionnés.",
+    "rights": "Tous droits réservés."
   }
 }
